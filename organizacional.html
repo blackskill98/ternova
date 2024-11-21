@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto de Responsabilidad Social Empresarial</title>
+    <link rel="stylesheet" href="organizacional.css">
+    <style>
+        /* Estilos básicos para el carrusel */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-images img {
+            width: 100%;
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .carousel-control.prev {
+            left: 10px;
+        }
+
+        .carousel-control.next {
+            right: 10px;
+        }
+
+        /* Estilos para los puntos de navegación */
+        .carousel-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+        }
+
+        .carousel-dots span {
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .carousel-dots span.active {
+            background-color: white;
+        }
+
+        /* Estilos para la navegación */
+        .nav-container {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        .nav-button {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            background-color: #333;
+            border-radius: 5px;
+        }
+
+        /* Responsividad */
+        @media screen and (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+
+        /* Diseño para el pie de página */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado con imagen de fondo y logo -->
+    <div class="header">
+        <img src="Logotipo_Recicla 2.png" alt="Logo" class="logo">
+        <h1>Proyecto de Responsabilidad Social Empresarial</h1>
+        <p>Contribuyendo al desarrollo sostenible de la comunidad.</p>
+
+        <!-- Contenedor para los botones de navegación -->
+        <div class="nav-container">
+            <a href="#ternova" class="nav-button">Ternova</a>
+            <a href="#proyecto" class="nav-button">Proyecto</a>
+            <a href="#experiencia" class="nav-button">Experiencia</a>
+            <a href="#memoria-historica" class="nav-button">Memoria Histórica</a>
+            <a href="#rse" class="nav-button">RSE</a>
+        </div>
+    </div>
+
+    <!-- Sección de Ternova -->
+    <div id="ternova" class="about">
+        <div class="container">
+            <h2>Acerca de la Empresa - Ternova</h2>
+            <p>Ternova es una empresa de El Salvador que se destaca por su fuerte compromiso con la sostenibilidad y la innovación en diversas áreas. Su enfoque principal es promover la economía circular, lo que significa que trabaja para reducir la cantidad de residuos y reutilizar los materiales tanto como sea posible. Un ejemplo claro de esto es su trabajo en el reciclaje de empaques flexibles, donde busca utilizar materiales reciclados en lugar de plásticos nuevos, lo que ayuda a disminuir la contaminación y el uso de recursos naturales.</p>
+            <p>Actualmente, Ternova no solo lidera en la industria del empaque, sino que también ha diversificado sus actividades hacia áreas como la logística y el desarrollo de nuevas tecnologías. La empresa ha invertido en el desarrollo de soluciones innovadoras y ha establecido un laboratorio de innovación (INnovaLab) para fomentar la creación de nuevos negocios​</p>
+            <p>Con operaciones en más de 40 países y presencia en mercados como Centroamérica, Asia y Estados Unidos, Ternova tiene una visión global, pero mantiene sus raíces en El Salvador. Además, la compañía emplea a miles de personas y está comprometida con la creación de una industria que sea motivo de orgullo para el país​</p>
+
+            <!-- Carrusel profesional de imágenes -->
+            <div class="carousel-container">
+                <div class="carousel-images">
+                    <img src="foto 1.jpeg" alt="Imagen 1">
+                    <img src="foto2.jpeg" alt="Imagen 2">
+                    <img src="foto 3.jpeg" alt="Imagen 3">
+                    <img src="foto4 (1).jpeg" alt="Imagen 4">
+                    <img src="foto5.jpeg" alt="Imagen 5">
+                </div>
+                <button class="carousel-control prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="carousel-control next" onclick="moveSlide(1)">&#10095;</button>
+                <div class="carousel-dots">
+                    <span class="active" onclick="currentSlide(1)"></span>
+                    <span onclick="currentSlide(2)"></span>
+                    <span onclick="currentSlide(3)"></span>
+                    <span onclick="currentSlide(4)"></span>
+                    <span onclick="currentSlide(5)"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let slideIndex = 1;
+
+        // Función para mover las diapositivas
+        function moveSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Función para establecer la diapositiva actual
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        // Función para mostrar las diapositivas
+        function showSlides(n) {
+            let i;
+            let slides = document.querySelectorAll('.carousel-images img');
+            let dots = document.querySelectorAll('.carousel-dots span');
+
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+        // Inicialización
+        showSlides(slideIndex);
+    </script>
+    <div id="proyecto" class="project-details">
+        <div class="container">
+            <h2>Detalles del Proyecto</h2>
+            <!-- Botón para mostrar más detalles -->
+            <button id="more-details-btn" onclick="toggleDetails()" class="details-button">Ver más detalles</button>
+            
+            <!-- Sección que se desplegará al hacer clic en el botón -->
+            <div id="project-details-full" style="display: none;">
+                <p>El proyecto tiene como propósito concienciar a la población salvadoreña sobre la importancia de gestionar adecuadamente los desechos orgánicos, promoviendo una cultura de reciclaje que refuerce la identidad nacional y el compromiso colectivo con el medio ambiente. Sus objetivos incluyen educar sobre la clasificación de residuos mediante campañas y talleres, reducir la contaminación impulsando el compostaje, fomentar la participación comunitaria en actividades de reciclaje, establecer alianzas estratégicas con instituciones y empresas para garantizar la sostenibilidad del proyecto, e incentivar el orgullo nacional vinculando estas acciones con valores y responsabilidad social. Además, busca medir su impacto a través de indicadores que reflejen mejoras en la gestión de residuos y en la participación activa de la ciudadanía</p>
+                
+                <!-- Agregado: Nuevo párrafo -->
+                <p></p>
+                
+                <h3>Imagenes</h3>
+                
+                <!-- Agregado: Sección de imágenes -->
+                <div class="image-gallery">
+                    <img src="foto6.jpeg" alt="Imagen 1" style="width:100%; max-width: 500px;">
+                    <img src="foto7.jpeg" alt="Imagen 2" style="width:100%; max-width: 500px;">
+                    <img src="foto8.jpeg" alt="Imagen 3" style="width:100%; max-width: 500px;">
+                    <img src="todos.jpeg" alt="Imagen 3" style="width:100%; max-width: 500px;">
+                </div>
+
+                <h2>Misión del Proyecto</h2>
+                <p>El proyecto Recicla 306 tiene como misión generar soluciones inteligentes e innovadoras que impulsen la transformación de individuos, sociedades y negocios hacia modelos prósperos y sostenibles. Con un enfoque en liderazgo internacional y un compromiso por unir esfuerzos para transformar el mundo, el proyecto se fundamenta en valores clave como la atención al cliente, la integridad, la innovación, la sostenibilidad y el desarrollo del potencial humano. Estos principios no sólo guían sus acciones, sino que también inspiran un cambio positivo que impacta tanto a nivel local como global.
+                </p>
+
+                <h2>Principales colaboradores e instituciones</h2>
+                <p> El proyecto de concienciación sobre reciclaje, Recicla 503, cuenta con el respaldo principal de Ternova, la empresa líder en financiamiento de esta iniciativa. Además, ha logrado sumar el apoyo de importantes empresas aliadas como Walmart, Telus y Nestlé, que han contribuido significativamente al desarrollo de las actividades y estrategias del proyecto. Asimismo, Recicla 503 se fortalece gracias al respaldo de organismos internacionales como la Unión Europea y la Cooperación Alemana, quienes han aportado recursos esenciales para ampliar su alcance y sostenibilidad. Esta colaboración multisectorial demuestra el compromiso colectivo de diversas organizaciones por transformar la cultura del reciclaje en El Salvador, promoviendo acciones responsables y sostenibles que beneficien tanto al medio ambiente como a la sociedad.
+    
+                </p>
+                <img src="niño3.jpeg" alt="Imagen 3" style="width:100%; max-width: 500px;">
+                <h2>Recursos esenciales del proyecto</h2>
+                <p>
+                    El proyecto de recicla 503 se centra en maximizar el aprovechamiento de recursos materiales y humanos para promover un manejo sostenible de los desechos. Se implementarán equipos avanzados de recolección diseñados específicamente para optimizar el proceso de separación y transporte de materiales reciclables. Paralelamente, se destinarán recursos educativos para capacitar a las comunidades, asegurando que las personas comprendan la importancia de la separación adecuada de residuos y el impacto ambiental de sus acciones. Este enfoque integral busca no solo reducir la contaminación y prolongar la vida útil de los vertederos, sino también generar valor económico a partir de materiales reciclados, fomentando así una economía circular que aproveche al máximo los recursos disponibles
+                    </p>
+                    <h2>Logros de la actividad
+                    </h2>
+                    <p>El proyecto busca mejorar los hábitos de disposición de residuos en la población, promoviendo la sensibilización sobre el impacto negativo del calentamiento global y la importancia de adoptar prácticas sostenibles. Se pretende alcanzar la mayor cobertura posible en todo el país, fomentando la participación de más personas en actividades de reciclaje. Además, se trabajará en apoyar y dignificar el trabajo de los recolectores de basura, creadores de base y centros de acopio, reconociendo su labor como un empleo honesto y fundamental para el desarrollo del reciclaje en El Salvador. El objetivo es garantizarles condiciones seguras y óptimas para desempeñarse, contribuyendo a la profesionalización del sector. Paralelamente, se buscará ampliar la sensibilización en temas de separación de residuos, capitalizando los avances logrados desde 2019, cuando más de 41,000 personas se sumaron al esfuerzo. No obstante, se reconoce que la barrera de aprendizaje sigue siendo grande, por lo que se continuará trabajando para superarla y lograr un impacto aún mayor. 
+                    </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="mision-vision-valores" class="about">
+        <div class="container">
+            <h2>Información Corporativa</h2>
+
+            <!-- Cuadros de Misión, Visión, Valores -->
+            <div class="info-cards">
+                <div class="info-card" onclick="toggleInfo('mision-info')">
+                    <h3>Misión</h3>
+                </div>
+                <div class="info-card" onclick="toggleInfo('vision-info')">
+                    <h3>Visión</h3>
+                </div>
+                <div class="info-card" onclick="toggleInfo('valores-info')">
+                    <h3>Valores</h3>
+                </div>
+            </div>
+
+            <!-- Información desplegable -->
+            <div id="mision-info" style="display: none;">
+                <p>La misión de Ternova es promover el desarrollo sostenible a través de la innovación, la gestión eficiente de recursos y la implementación de prácticas responsables en todos los niveles de la empresa.</p>
+            </div>
+            <div id="vision-info" style="display: none;">
+                <p>La visión de Ternova es ser una empresa líder en la gestión ambiental en El Salvador, promoviendo un modelo de economía circular que transforme el reciclaje en una actividad clave para el futuro del país.</p>
+            </div>
+            <div id="valores-info" style="display: none;">
+                <p>Los valores fundamentales de Ternova son el compromiso con el medio ambiente, la inclusión social, la responsabilidad empresarial, la innovación y la colaboración.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de Experiencia -->
+    <div id="experiencia" class="about">
+        <div class="container">
+            <h2>Experiencia</h2>
+            <p>¿Sabías que todos podemos ser parte del cambio hacia un futuro más sostenible? Este proyecto de reciclaje no solo tiene un enfoque educativo, sino también estratégico. Trabajamos mano a mano con empresas privadas, instituciones públicas y centros educativos como colegios y universidades, para llegar a cada rincón de nuestra sociedad.
+            </p>
+            <img src="foto niños.jpeg" alt="Imagen 3" style="width:100%; max-width: 500px;">
+            <img src="foto niño 2.jpeg" alt="Imagen 3" style="width:100%; max-width: 500px;">
+
+            <p>Nuestra línea operativa es sencilla pero poderosa: primero realizamos un diagnóstico para entender las necesidades y oportunidades en cada área. Luego, entregamos los recursos necesarios y ponemos en marcha las acciones, siempre evaluando lo aprendido en el camino para mejorar continuamente.
+            </p>
+            <p>Y aquí viene lo emocionante: si quieres unirte como voluntario, ¡prepárate para aprender! Ofrecemos capacitaciones que combinan una parte educativa y otra formativa, diseñadas para empoderarte y darte las herramientas para ser un agente de cambio. Porque en este proyecto, cada esfuerzo cuenta, y tú puedes ser parte de esta transformación. 🌍♻️</p>
+    
+</div>
+    </div>
+    <div id="memoria-historica" class="about">
+        <div class="container">
+            <h2>Nuestra experiencia</h2>
+            <p>Como grupo de estudiantes de la Universidad Centroamericana José Simeón Cañas (UCA), nos sentimos sumamente felices de haber participado en este proyecto. La experiencia nos permitió conectar con las personas y, al mismo tiempo, generar conciencia sobre la importancia de separar correctamente los desechos orgánicos. Fue una actividad enriquecedora para todos, ya que buscamos una forma de desarrollar la actividad de manera creativa e interactiva. A través de una dinámica participativa, invitamos a las personas a clasificar dibujos de distintos tipos de residuos y colocarlos en el contenedor correspondiente, fomentando así el aprendizaje de una forma lúdica y entretenida.
+                <p>Durante las capacitaciones brindadas por Ternova, experimentamos una excelente relación y comunicación, lo que hizo que la actividad fuera motivadora. El ambiente fue sumamente agradable y acogedor, propiciando el aprendizaje de manera colaborativa y dinámica. Estas experiencias no solo nos inspiraron, sino que también fortalecieron nuestro compromiso con el cuidado del medio ambiente. Saber que, a través de estas acciones, contribuimos a construir un país más limpio nos llena de orgullo y nos motiva a seguir promoviendo cambios positivos en nuestra comunidad.
+                </p>
+                <img src="eli.jpeg" alt="Imagen 3" style="width:100%; max-width: 280px;">
+                <img src="dana.jpeg" alt="Imagen 3" style="width:100%; max-width: 280px;">
+                <img src="raul.jpeg" alt="Imagen 3" style="width:100%; max-width: 280px;">
+                <img src="Gerardo.jpeg" alt="Imagen 3" style="width:100%; max-width: 280px;">
+.</p>
+        </div>
+    </div>
+
+    <!-- Sección de Memoria Histórica -->
+    <div id="memoria-historica" class="about">
+        <div class="container">
+            <h2>Memoria Histórica</h2>
+            <p>La memoria histórica es un pilar fundamental en el movimiento Reciclaje 503, que busca no solo mantener limpias las zonas emblemáticas del país, sino también preservar la riqueza cultural y natural que define la identidad salvadoreña. Este proyecto tiene como objetivo proteger espacios icónicos como el centro histórico, parques nacionales y playas, asegurando que tanto los habitantes como los visitantes puedan disfrutar de un entorno limpio y saludable. Al cuidar estos lugares, se evita su deterioro y desaparición, manteniendo viva la conexión con la historia y tradiciones del país. De esta manera, Reciclaje 503 no solo fomenta prácticas sostenibles, sino que también trabaja para salvaguardar los valores culturales y ambientales que forman parte del legado salvadoreño, inspirando a futuras generaciones a valorar y respetar su entorno.
+                .</p>
+        </div>
+    </div>
+
+    <!-- Sección de Responsabilidad Social Empresarial (RSE) -->
+    <div id="rse" class="about">
+        <div class="container">
+            <h2>Responsabilidad Social Empresarial (RSE)</h2>
+            <p>Nuestro proyecto tiene como objetivo fortalecer los vínculos con las comunidades y personas, promoviendo una conexión más profunda con el medio ambiente y la sostenibilidad. A través de este programa, buscamos no solo fomentar prácticas responsables, sino también brindar beneficios directos, como la mejora de las condiciones de limpieza y bienestar en los entornos de las personas. Creemos que al involucrar activamente a las personas e informar, crearemos un mayor compromiso compartido hacia la protección del planeta y un futuro más sostenible para todos.
+            </p>
+            <img src="cjas 2.jpeg" alt="Imagen 3" style="width:100%; max-width: 300px;">
+            <img src="todos 2.jpeg" alt="Imagen 3" style="width:100%; max-width: 420px;">
+            <img src="niño 4.jpeg" alt="Imagen 3" style="width:100%; max-width: 420px;">
+        </div>
+
+    </div>
+    <!-- Sección de Llamado a la Acción -->
+    <div class="cta">
+        <div class="container">
+            <h2>Únete a la causa</h2>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSewTtBw2XVb0y8J5HH14uGNfnN3QDjfqgnDbYZJ-8SkFTN-2Q/viewform?usp=sf_link">
+                <button>Participa Aqui</button>
+            </a>
+        </div>
+    </div>
+
+    <!-- Pie de Página -->
+    <div class="footer">
+        <p>&copy; 2024 Derechos reservados ternova</p>
+    </div>
+
+    <script>
+        function toggleDetails() {
+            const details = document.getElementById('project-details-full');
+            const button = document.getElementById('more-details-btn');
+            if (details.style.display === "none") {
+                details.style.display = "block";
+                button.textContent = "Ver menos detalles";
+            } else {
+                details.style.display = "none";
+                button.textContent = "Ver más detalles";
+            }
+        }
+
+        function toggleInfo(infoId) {
+            const info = document.getElementById(infoId);
+            info.style.display = (info.style.display === 'none' || info.style.display === '') ? 'block' : 'none';
+        }
+    </script>
+
+</body>
+</html>
